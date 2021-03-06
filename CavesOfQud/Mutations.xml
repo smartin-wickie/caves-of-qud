@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mutations>
+	<category Name="Mental" DisplayName="&amp;GMental Mutations" Property="MentalMutationShift" ForceProperty="MentalMutationForceShift">
+		<mutation Name="Eldrich Summoning" Cost="8" MaxSelected="1" Class="EldrichSummons" BearerDescription="those who broker with Eldrich beings" Code="ebs" Type="Mental"></mutation>
+		<!--<mutation Name="Neural Electrical Generation" Cost="4" MaxSelected="1" Class="ElectricalGeneration" Exclusions="" BearerDescription="those who generate electricity" Code="ebf" Type="Mental"></mutation>-->
+		<!--<mutation Name="Enhanced Hearing" Cost="2" MaxSelected="1" Class="HeightenedHearing" Exclusions="" BearerDescription="those with heightened hearing" Code="ebj" Type="Mental"></mutation>-->
+		<!--<mutation Name="Neural Enhanced Quickness" Cost="3" MaxSelected="1" Class="HeightenedSpeed" Exclusions="" BearerDescription="the quick" Code="ebk" Type="Mental"></mutation>-->
+		<!--<mutation Name="Genokinetic Metamorphosis" Cost="4" MaxSelected="1" Class="Metamorphosis" Exclusions="" BearerDescription="shapeshifters" Code="ebm" Prerelease="true" Type="Mental"></mutation>
+		<mutation Name="Genokinetic Arms" Cost="4" MaxSelected="1" Class="MultipleArms" Exclusions="" BearerDescription="the many-armed" Code="ebn" Type="Mental"></mutation>
+		<mutation Name="Genokinetic Legs" Cost="5" MaxSelected="1" Class="MultipleLegs" Exclusions="" BearerDescription="the many-legged" Code="ebo" Type="Mental"></mutation>
+		<mutation Name="Photokinetic EnhancedVision" Cost="1" MaxSelected="1" Class="DarkVision" Exclusions="" BearerDescription="the darksighted" Code="ebp" Type="Mental"></mutation>-->
+		<mutation Name="Esper Phasing" Cost="4" MaxSelected="1" Class="Phasing" Exclusions="" BearerDescription="those who phase" Code="ebq" Type="Mental"></mutation>
+		<!--<mutation Name="Genokinetic Skin" Cost="2" MaxSelected="1" Class="PhotosyntheticSkin" Exclusions="Albino,Carnivorous" BearerDescription="the green-skinned" Code="ebr" Type="Mental"></mutation>-->
+		<mutation Name="Esper Regeneration" Cost="4" MaxSelected="1" Class="Regeneration" Exclusions="" BearerDescription="those who regenerate" Code="ebt" Type="Mental"></mutation>
+		<mutation Name="Esper Wings" Cost="4" MaxSelected="1" Class="Wings" Exclusions="Stinger (Confusing Venom),Stinger (Paralyzing Venom),Stinger (Poisoning Venom)" BearerDescription="the winged" Code="eb5" Type="Mental"></mutation>
+		<!--<mutation Name="Genokinetic Glands" Cost="1" MaxSelected="1" Class="SlimeGlands" Exclusions="" BearerDescription="slime spitters" Code="ebv" Type="Mental"></mutation>
+		<mutation Name="Genokinetic Spinnerets" Cost="3" MaxSelected="1" Class="Spinnerets" Exclusions="" BearerDescription="web weavers" Code="ebw" Type="Mental"></mutation>-->-->
+	</category>
+</mutations>
