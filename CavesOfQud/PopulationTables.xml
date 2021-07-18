@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<populations>
+	<population Name="StartingGear_PhysAd">
+		<group Style="pickeach">
+			<table Name="StartingGear_Pilgrim"></table>
+			<object Blueprint="Psionic Anchor" Number="1"></object>
+      		<object Blueprint="Basic Toolkit" Number="1"></object>
+			<object Blueprint="Dagger" Number="2"></object>
+		</group>
+	</population>
+</populations>

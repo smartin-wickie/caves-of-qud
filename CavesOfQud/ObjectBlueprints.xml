@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<objects>
+	<object Name="EldrichSummons_Bite" Inherits="NaturalWeapon">
+		<part Name="Render" DisplayName="{{R|spiraling maw of teeth}}" />
+		<part Name="MeleeWeapon" RenderString="\" BaseDamage="1d4" Skill="ShortBlades" Stat="Strength" Slot="Face" />
+	</object>
+
+	<object Name="EldrichSummons_Beak" Inherits="NaturalWeapon">
+		<part Name="Render" DisplayName="{{R|slicing maw}}" />
+		<part Name="MeleeWeapon" RenderString="\" BaseDamage="1d6" Skill="Axe" Stat="Strength" Slot="Face" />
+	</object>
+
+	<object Name="EldrichSummons_Claws" Inherits="NaturalWeapon">
+		<part Name="Render" DisplayName="{{R|bladed limbs}}" />
+		<part Name="MeleeWeapon" RenderString="*" BaseDamage="1d6" Skill="LongBlades" Stat="Strength" Slot="Foot" />
+	</object>
+
+	<object Name="EldrichSummons_Tentacle" Inherits="NaturalWeapon">
+		<part Name="Render" DisplayName="{{R|writhing tentacles}}" />
+		<part Name="MeleeWeapon" BaseDamage="1d2" Skill="Cudgel" Stat="Strength" Slot="Foot" />
+	</object>
+
+	<object Name="EldrichSummons_Spines" Inherits="NaturalMissileWeapon">
+		<part Name="Render" DisplayName="{{M|crystalline spines}}" />
+		<part Name="MissileWeapon" RangeIncrement="3" Skill="Pistol" UseAmmo="false" />
+		<part Name="BioAmmoLoader" MaxCapacity="12" Available="12" TurnsToGenerate="4" ProjectileObject="EldrichSummons_Spines_Spike" />
+		<tag Name="MissileFireSound" Value="LowSpit" />
+		<tag Name="UsesSlots" Value="Head" />
+	</object>
+	<object Name="EldrichSummons_Spines_Spike" Inherits="TemporaryProjectile">
+		<part Name="Render" DisplayName="{{K|splike}}" />
+		<part Name="Projectile" BasePenetration="5" BaseDamage="1d4" ColorString="&amp;y" PassByVerb="whiz" />
+		<tag Name="Light" />
+	</object>
+
+	<object Name="EldrichSummons_Laser" Inherits="NaturalMissileWeapon">
+		<part Name="Render" DisplayName="{{M|voidlike beam}}" />
+		<part Name="MissileWeapon" RangeIncrement="3" Skill="Rifle" UseAmmo="false" />
+		<part Name="BioAmmoLoader" MaxCapacity="6" Available="6" TurnsToGenerate="10" ProjectileObject="EldrichSummons_Beam" />
+		<tag Name="MissileFireSound" Value="Laser" />
+		<tag Name="UsesSlots" Value="Face" />
+	</object>
+	<object Name="EldrichSummons_Beam" Inherits="TemporaryProjectile">
+		<part Name="Render" DisplayName="{{Kbeam}}" />
+		<part Name="Projectile" BasePenetration="5" BaseDamage="1d4" ColorString="&amp;y" PassByVerb="flashes" />
+		<tag Name="Light" />
+	</object>
+
+	<object Name="EldrichSummons_Harpoon_Tongue" Inherits="NaturalMissileWeapon">
+		<part Name="Render" DisplayName="{{r|barbed tongue}}" />
+		<part Name="MissileWeapon" RangeIncrement="6" Skill="Rifle" UseAmmo="false" />
+		<part Name="BioAmmoLoader" MaxCapacity="3" Available="3" TurnsToGenerate="5" ProjectileObject="EldrichSummons_Harpoon" />
+		<tag Name="MissileFireSound" Value="LowSpit" />
+		<tag Name="UsesSlots" Value="Head" />
+	</object>
+	<object Name="EldrichSummons_Harpoon" Inherits="TemporaryProjectile">
+		<part Name="Render" DisplayName="{{r|barbed tongue}}" />
+		<part Name="Projectile" BasePenetration="6" BaseDamage="1d10" Attributes="Exsanguination" ColorString="&amp;r" PassByVerb="whiz" />
+		<part Name="HookOnMissileHit" />
+		<part Name="VampiricWeapon" Percent="80-100" Reduction="1d3-1" Maximum="1d20+20" RequiresLivingTarget="true" />
+	</object>
+
+
+	<!--Basic fighter short blades-->
+	<object Name="EldrichSummons1" Inherits="BaseReptile">
+		<part Name="Render" DisplayName="Eldrich Horror" Tile="creatures/sw_memory_eater.bmp" RenderString="g" ColorString="&amp;m" DetailColor="b"></part>
+		<part Name="Corpse" CorpseChance="0" BodyDrop="true" InvetoryDrop="true"></part>
+		<part Name="Brain" hostile="false"></part>
+		<stat Name="Hitpoints" Value="20"></stat>
+		<stat Name="Strength" sValue="10,1d10,(t-1)d1"></stat>
+		<stat Name="Agility" sValue="10,1d8,(t-1)d1"></stat>
+		<stat Name="Toughness" sValue="15,1d6,(t-1)d1"></stat>
+		<stat Name="Intelligence" sValue="8,1d10,(t-1)d1"></stat>
+		<stat Name="Willpower" sValue="8,1d10,(t-1)d1"></stat>
+		<stat Name="Ego" sValue="8,1d10,(t-1)d1"></stat>
+		<stat Name="DV" Value="1"></stat>
+		<stat Name="AV" Value="1"></stat>
+		<stat Name="SP" sValue="50,10d10,(t-1)d10"></stat>
+		<stat Name="XPValue" Value="0"></stat>
+		<part Name="Description" Short="A shifting and undulating being brought forth from an alternate reality."></part>
+		<part Name="HologramMaterial"></part>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"></tag>
+		<skill Name="Discipline_FastingWay"></skill>
+		<skill Name="Discipline_MindOverBody"></skill>
+		<skill Name="ShortBlades" />
+		<skill Name="Endurance_ShakeItOff" />
+		<skill Name="Endurance_PoisonTolerance" />
+		<stat Name="ColdResistance" Value="0" />
+		<mutation Name="DarkVision" Level="9" />
+		<mutation Name="Regeneration" Level="5" />
+		<inventoryobject Blueprint="EldrichSummons_Bite" Number="1"></inventoryobject>
+		<property Name="Role" Value="Tank" />
+	</object>
+
+	<!--Fighting creature psuedopods 3 cudgels-->
+	<object Name="EldrichSummons2" Inherits="BaseReptile">
+		<part Name="Render" DisplayName="Eldrich Horror" Tile="creatures/sw_mimic.bmp" RenderString="g" ColorString="&amp;b" DetailColor="g"></part>
+		<part Name="Corpse" CorpseChance="0" BodyDrop="true" InvetoryDrop="true"></part>
+		<part Name="Brain" hostile="false"></part>
+		<stat Name="Hitpoints" Value="20"></stat>
+		<stat Name="Strength" sValue="14,1d8,(t-1)d1"></stat>
+		<stat Name="Agility" sValue="11,1d8,(t-1)d1"></stat>
+		<stat Name="Toughness" sValue="16,1d6,(t-1)d1"></stat>
+		<stat Name="Intelligence" sValue="10,1d10,(t-1)d1"></stat>
+		<stat Name="Willpower" sValue="10,1d10,(t-1)d1"></stat>
+		<stat Name="Ego" sValue="10,1d10,(t-1)d1"></stat>
+		<stat Name="DV" Value="1"></stat>
+		<stat Name="AV" Value="2"></stat>
+		<stat Name="SP" sValue="50,20d10,(t-1)d10"></stat>
+		<stat Name="XPValue" Value="0"></stat>
+		<part Name="Description" Short="A shifting and undulating being brought forth from an alternate reality."></part>
+		<part Name="HologramMaterial"></part>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"></tag>
+		<skill Name="Discipline_FastingWay"></skill>
+		<skill Name="Discipline_MindOverBody"></skill>
+		<skill Name="Cudgel" />
+		<stat Name="ColdResistance" Value="0" />
+		<mutation Name="DarkVision" Level="9" />
+		<mutation Name="Regeneration" Level="1" />
+		<inventoryobject Blueprint="EldrichSummons_Tentacle" Number="4"></inventoryobject>
+		<property Name="Role" Value="Brute" />
+	</object>
+
+	<!--Quill worm ranged pistol-->
+	<object Name="EldrichSummons3" Inherits="BaseReptile">
+		<part Name="Render" DisplayName="Eldrich Horror" Tile="creatures/sw_quillipede.bmp" RenderString="g" ColorString="&amp;c" DetailColor="K"></part>
+		<part Name="Corpse" CorpseChance="0" BodyDrop="true" InvetoryDrop="true"></part>
+		<part Name="Brain" hostile="false"></part>
+		<stat Name="Hitpoints" Value="15"></stat>
+		<stat Name="Strength" sValue="9,1d8,(t-1)d2"></stat>
+		<stat Name="Agility" sValue="14,1d8,(t-1)d2"></stat>
+		<stat Name="Toughness" sValue="13,1d6,(t-1)d2"></stat>
+		<stat Name="Intelligence" sValue="12,1d10,(t-1)d2"></stat>
+		<stat Name="Willpower" sValue="12,1d10,(t-1)d2"></stat>
+		<stat Name="Ego" sValue="12,1d10,(t-1)d2"></stat>
+		<stat Name="DV" Value="1"></stat>
+		<stat Name="AV" Value="2"></stat>
+		<stat Name="SP" sValue="50,20d10,(t-1)d10"></stat>
+		<stat Name="MP" sValue="1,1d2,(t-1)d1"></stat>
+		<stat Name="XPValue" Value="0"></stat>
+		<part Name="Description" Short="A shifting and undulating being brought forth from an alternate reality."></part>
+		<part Name="HologramMaterial"></part>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"></tag>
+		<skill Name="Discipline_FastingWay"></skill>
+		<skill Name="Discipline_MindOverBody"></skill>
+		<skill Name="Pistol" />
+		<skill Name="Tactics_Run" />
+		<stat Name="ColdResistance" Value="0" />
+		<mutation Name="DarkVision" Level="9" />
+		<mutation Name="Regeneration" Level="1" />
+		<mutation Name="Quills" Level="2" />
+		<part Name="AIShootAndScoot" Duration="1d2" />
+		<inventoryobject Blueprint="EldrichSummons_Bite" Number="1"></inventoryobject>
+		<inventoryobject Blueprint="EldrichSummons_Spines" Number="1"></inventoryobject>
+		<property Name="Role" Value="Skirmisher" />
+	</object>
+
+	<!--Tank w/shell reptile axe/shield-->
+	<object Name="EldrichSummons4" Inherits="BaseReptile">
+		<part Name="Render" DisplayName="Eldrich Horror" Tile="creatures/sw_moss_monster.bmp" RenderString="g" ColorString="&amp;k" DetailColor="c"></part>
+		<part Name="Corpse" CorpseChance="0" BodyDrop="true" InvetoryDrop="true"></part>
+		<part Name="Brain" hostile="false"></part>
+		<stat Name="Hitpoints" Value="20"></stat>
+		<stat Name="Strength" sValue="16,1d8,(t-1)d2"></stat>
+		<stat Name="Agility" sValue="11,1d8,(t-1)d2"></stat>
+		<stat Name="Toughness" sValue="16,1d6,(t-1)d2"></stat>
+		<stat Name="Intelligence" sValue="8,1d10,(t-1)d2"></stat>
+		<stat Name="Willpower" sValue="8,1d10,(t-1)d2"></stat>
+		<stat Name="Ego" sValue="8,1d10,(t-1)d2"></stat>
+		<stat Name="DV" Value="1"></stat>
+		<stat Name="SP" sValue="100,10d10,(t-1)d10"></stat>
+		<stat Name="MP" sValue="1,1d1,(t-1)d1"></stat>
+		<stat Name="XPValue" Value="0"></stat>
+		<part Name="Description" Short="A shifting and undulating being brought forth from an alternate reality."></part>
+		<stat Name="AV" Value="2" />
+		<part Name="HologramMaterial"></part>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"></tag>
+		<skill Name="Discipline_FastingWay"></skill>
+		<skill Name="Discipline_MindOverBody"></skill>
+		<skill Name="Axe" />
+		<stat Name="ColdResistance" Value="0" />
+		<skill Name="Endurance_ShakeItOff" />
+		<skill Name="Endurance_PoisonTolerance" />
+		<mutation Name="DarkVision" Level="9" />
+		<mutation Name="Regeneration" Level="1" />
+		<mutation Name="Carapace" Level="2" />
+		<part Name="Shield" AV="2" DV="2" WornOn="Tail" />
+		<inventoryobject Blueprint="EldrichSummons_Beak" Number="1"></inventoryobject>
+		<property Name="Role" Value="Tank" />
+	</object>
+
+	<!--Harpooner lifesucker teleport phase "stealth" short blades-->
+	<object Name="EldrichSummons5" Inherits="BaseReptile">
+		<part Name="Render" DisplayName="Eldrich Horror" Tile="creatures/sw_dagasha.bmp" RenderString="g" ColorString="&amp;K" DetailColor="g"></part>
+		<part Name="Corpse" CorpseChance="0" BodyDrop="true" InvetoryDrop="true"></part>
+		<part Name="Brain" hostile="false"></part>
+		<stat Name="Hitpoints" Value="15"></stat>
+		<stat Name="Strength" sValue="15,1d8,(t-1)d2"></stat>
+		<stat Name="Agility" sValue="16,1d8,(t-1)d2"></stat>
+		<stat Name="Toughness" sValue="14,1d6,(t-1)d2"></stat>
+		<stat Name="Intelligence" sValue="10,1d10,(t-1)d2"></stat>
+		<stat Name="Willpower" sValue="8,1d10,(t-1)d2"></stat>
+		<stat Name="Ego" sValue="8,1d10,(t-1)d2"></stat>
+		<stat Name="DV" Value="5"></stat>
+		<stat Name="AV" Value="2"></stat>
+		<stat Name="SP" sValue="100,10d10,(t-1)d10"></stat>
+		<stat Name="MP" sValue="1,1d4,(t-1)d1"></stat>
+		<stat Name="XPValue" Value="0"></stat>
+		<part Name="Description" Short="A shifting and undulating being brought forth from an alternate reality."></part>
+		<part Name="HologramMaterial"></part>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"></tag>
+		<skill Name="Discipline_FastingWay"></skill>
+		<skill Name="Discipline_MindOverBody"></skill>
+		<skill Name="ShortBlades" />
+		<skill Name="Rifles" />
+		<skill Name="Endurance_ShakeItOff" />
+		<skill Name="Endurance_PoisonTolerance" />
+		<skill Name="Tactics_Run" />
+		<stat Name="ColdResistance" Value="0" />
+		<mutation Name="DarkVision" Level="9" />
+		<mutation Name="Teleportation" Level="1" />
+		<mutation Name="Phasing" Level="1" />
+		<mutation Name="AdrenalControl2" Level="1" />
+		<inventoryobject Blueprint="EldrichSummons_Bite" Number="3"></inventoryobject>
+		<inventoryobject Blueprint="EldrichSummons_Harpoon_Tongue" Number="1"></inventoryobject>
+		<property Name="Role" Value="Lurker" />
+	</object>
+
+	<!--Flier long blades and beam rifle-->
+	<object Name="EldrichSummons6" Inherits="BaseReptile">
+		<part Name="Render" DisplayName="Eldrich Horror" Tile="Assets_Content_Textures_Creatures_sw_salthopper.bmp" RenderString="g" ColorString="&amp;k" DetailColor="m"></part>
+		<part Name="Corpse" CorpseChance="0" BodyDrop="true" InvetoryDrop="true"></part>
+		<part Name="Brain" hostile="false"></part>
+		<stat Name="Hitpoints" Value="20"></stat>
+		<stat Name="Strength" sValue="12,1d8,(t-1)d2"></stat>
+		<stat Name="Agility" sValue="12,1d8,(t-1)d2"></stat>
+		<stat Name="Toughness" sValue="16,1d6,(t-1)d2"></stat>
+		<stat Name="Intelligence" sValue="10,1d10,(t-1)d2"></stat>
+		<stat Name="Willpower" sValue="10,1d10,(t-1)d2"></stat>
+		<stat Name="Ego" sValue="10,1d10,(t-1)d2"></stat>
+		<stat Name="DV" Value="2"></stat>
+		<stat Name="AV" Value="4"></stat>
+		<stat Name="SP" sValue="100,10d10,(t-1)d10"></stat>
+		<stat Name="MP" sValue="1,1d4,(t-1)d1"></stat>
+		<stat Name="XPValue" Value="0"></stat>
+		<part Name="Description" Short="A shifting and undulating being brought forth from an alternate reality."></part>
+		<part Name="HologramMaterial"></part>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"></tag>
+		<skill Name="Discipline_FastingWay"></skill>
+		<skill Name="Discipline_MindOverBody"></skill>
+		<skill Name="LongBlades2" />
+		<skill Name="Rifles" />
+		<mutation Name="DarkVision" Level="9" />
+		<mutation Name="Regeneration" Level="1" />
+		<mutation Name="Wings" Level="10" />
+		<mutation Name="BurrowingClaws" Level="1" CreateObject="false" />
+		<inventoryobject Blueprint="EldrichSummons_Claws" Number="4"></inventoryobject>
+		<inventoryobject Blueprint="EldrichSummons_Laser" Number="1"></inventoryobject>
+		<property Name="Role" Value="Tank" />
+	</object>
+
+	<!--Chimera -->
+	<object Name="EldrichSummons7" Inherits="BaseHumanoid">
+		<part Name="Render" DisplayName="Eldrich Horror" Tile="Creatures/sw_agolzvuv.bmp" RenderString="g" ColorString="&amp;k" DetailColor="m"></part>
+		<part Name="Corpse" CorpseChance="0" BodyDrop="true" InvetoryDrop="true"></part>
+		<part Name="Brain" hostile="false"></part>
+		<stat Name="Hitpoints" Value="20"></stat>
+		<stat Name="Strength" sValue="16,1d8,(t-1)d2"></stat>
+		<stat Name="Agility" sValue="11,1d8,(t-1)d2"></stat>
+		<stat Name="Toughness" sValue="16,1d6,(t-1)d2"></stat>
+		<stat Name="Intelligence" sValue="6,1d10,(t-1)d2"></stat>
+		<stat Name="Willpower" sValue="10,1d10,(t-1)d2"></stat>
+		<stat Name="Ego" sValue="6,1d10,(t-1)d2"></stat>
+		<stat Name="DV" Value="2"></stat>
+		<stat Name="AV" Value="2"></stat>
+		<stat Name="SP" sValue="100,10d10,(t-1)d10"></stat>
+		<stat Name="MP" sValue="10,1d1,(t-1)d1"></stat>
+		<stat Name="XPValue" Value="0"></stat>
+		<part Name="Description" Short="A shifting and undulating being brought forth from an alternate reality."></part>
+		<part Name="HologramMaterial"></part>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"></tag>
+		<skill Name="Discipline_FastingWay"></skill>
+		<skill Name="Discipline_MindOverBody"></skill>
+		<skill Name="Tactics_Run" />
+		<skill Name="ShortBlades" />
+		<mutation Name="DarkVision" Level="9" />
+		<mutation Name="Regeneration" Level="1" />
+		<inventoryobject Blueprint="EldrichSummons_Bite" Number="1"></inventoryobject>
+		<property Name="Role" Value="Hero" />
+	</object>
+
+	<!--Esper -->
+	<object Name="EldrichSummons8" Inherits="BaseHumanoid">
+		<part Name="Render" DisplayName="Eldrich Horror" Tile="creatures/sw_kah.bmp" RenderString="k" ColorString="&amp;K" DetailColor="g"></part>
+		<part Name="Corpse" CorpseChance="0" BodyDrop="true" InvetoryDrop="true"></part>
+		<part Name="Brain" hostile="false"></part>
+		<stat Name="Hitpoints" Value="20"></stat>
+		<stat Name="Strength" sValue="11,1d8,(t-1)d2"></stat>
+		<stat Name="Agility" sValue="11,1d8,(t-1)d2"></stat>
+		<stat Name="Toughness" sValue="14,1d6,(t-1)d2"></stat>
+		<stat Name="Intelligence" sValue="12,1d10,(t-1)d2"></stat>
+		<stat Name="Willpower" sValue="12,1d10,(t-1)d2"></stat>
+		<stat Name="Ego" sValue="12,1d10,(t-1)d2"></stat>
+		<stat Name="DV" Value="2"></stat>
+		<stat Name="AV" Value="2"></stat>
+		<stat Name="SP" sValue="300,20d10,(t-1)d10"></stat>
+		<stat Name="MP" sValue="10,1d1,(t-1)d1"></stat>
+		<stat Name="XPValue" Value="0"></stat>
+		<part Name="Description" Short="A shifting and undulating being brought forth from an alternate reality."></part>
+		<part Name="HologramMaterial"></part>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"></tag>
+		<skill Name="Discipline_FastingWay"></skill>
+		<skill Name="Discipline_MindOverBody"></skill>
+		<skill Name="ShortBlades" />
+		<skill Name="Tactics_Run" />
+		<mutation Name="DarkVision" Level="9" />
+		<mutation Name="Regeneration" Level="1" />
+		<mutation Name="Wings" Level="1" CreateObject="false" />
+		<inventoryobject Blueprint="EldrichSummons_Bite" Number="1"></inventoryobject>
+		<property Name="Role" Value="Tank" />
+	</object>
+
+	<!--Pyramid-->
+	<object Name="EldrichSummons9" Inherits="BaseHumanoid">
+		<part Name="Render" DisplayName="Eldrich Horror" Tile="Creatures/sw_pyramid4.bmp" RenderString="g" ColorString="&amp;K" DetailColor="g"></part>
+		<part Name="Corpse" CorpseChance="0" BodyDrop="true" InvetoryDrop="true"></part>
+		<part Name="Brain" hostile="false"></part>
+		<stat Name="Hitpoints" Value="20"></stat>
+		<stat Name="Strength" sValue="15,1d12,(t-1)d2"></stat>
+		<stat Name="Agility" sValue="15,1d12,(t-1)d2"></stat>
+		<stat Name="Toughness" sValue="15,1d8,(t-1)d2"></stat>
+		<stat Name="Intelligence" sValue="15,1d10,(t-1)d2"></stat>
+		<stat Name="Willpower" sValue="15,1d10,(t-1)d2"></stat>
+		<stat Name="Ego" sValue="15,1d10,(t-1)d2"></stat>
+		<stat Name="DV" Value="1"></stat>
+		<stat Name="AV" Value="6"></stat>
+		<stat Name="SP" sValue="50,20d10,(t-1)d10"></stat>
+		<stat Name="XPValue" Value="0"></stat>
+		<part Name="Description" Short="A shifting and undulating being brought forth from an alternate reality."></part>
+		<part Name="HologramMaterial"></part>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"></tag>
+		<skill Name="Discipline_FastingWay"></skill>
+		<skill Name="Discipline_MindOverBody"></skill>
+		<skill Name="Rifles" />
+		<skill Name="Endurance_ShakeItOff" />
+		<skill Name="Endurance_PoisonTolerance" />
+		<skill Name="Tactics_Run" />
+		<mutation Name="DarkVision" Level="9" />
+		<mutation Name="Regeneration" Level="1" />
+		<mutation Name="ElectricalGeneration" Level="1" />
+		<mutation Name="FlamingHands" Level="2" />
+		<mutation Name="FreezingHands" Level="2" />
+		<mutation Name="Cryokinesis" Level="2" />
+		<mutation Name="Pyrokinesis" Level="2" />
+		<mutation Name="LightManipulation" Level="1" />
+		<mutation Name="HeightenedHearing" Level="1" />
+		<mutation Name="Phasing" Level="1" />
+		<mutation Name="SpontaneousCombustion" Level="1" />
+		<stat Name="HeatResistance" Value="50" />
+		<stat Name="ColdResistance" Value="50" />
+		<inventoryobject Blueprint="EldrichSummons_Laser" Number="1"></inventoryobject>
+		<property Name="Role" Value="Hero" />
+		<intproperty Name="Inorganic" Value="1" />
+	</object>
+
+	<object Name="Psionic Anchor" Inherits="Ontological Anchor">
+    	<part Name="Armor" AV="0" DV="2" WornOn="Arm" />	
+		<part Name="Render" DisplayName="&amp;ca small inky sphere" RenderString="]" />
+		<part Name="Physics" Weight="-1000" />
+		<part Name="Commerce" Value="0" />
+		<part Name="Examiner" UnknownDisplayName="&amp;csmall trinket" AlternateDisplayName="small sphere" Complexity="2" />
+		<part Name="Description" Short="This small inky sphere allows its owner to store items in a pocket dimension." />
+		<tag Name="DimensionalPocket" />
+		<tag Name="Tier" Value="7" />
+		<part Name="Container" />
+		<part Name="Inventory" />
+		<stag Name="Storage" />
+	</object>
+
+
+	<object Name="EldrichSummons" Inherits="BaseReptile">
+		<part Name="Render" DisplayName="Eldrich Horror" Tile="creatures/sw_mimic.bmp" RenderString="g" ColorString="&amp;M" DetailColor="b"></part>
+		<part Name="Corpse" CorpseChance="0" BodyDrop="true" InvetoryDrop="true"></part>
+		<part Name="Brain" hostile="false"></part>
+		<stat Name="Hitpoints" Value="20"></stat>
+		<stat Name="Strength" sValue="10"></stat>
+		<stat Name="Agility" sValue="10"></stat>
+		<stat Name="Toughness" sValue="10"></stat>
+		<stat Name="Intelligence" sValue="10"></stat>
+		<stat Name="Willpower" sValue="10"></stat>
+		<stat Name="Ego" sValue="10"></stat>
+		<stat Name="DV" Value="5"></stat>
+		<stat Name="XPValue" Value="0"></stat>
+		<tag Name="HeroNamePrefixes" Value="Xar,Ser,Hundin,Yod,U,Meh,Din,I,Ni,I,Ti,Si,Ki,Dvor,Qam,Uu,Y,Yy,Ny,Ty,Sy,Keth,O,Q,Oz,Ereth,Yi,Nu,Ay,Ku,Ka,Etef,Reh,Tz,Kf,Oye,Zab,Ort"></tag>
+		<tag Name="HeroNamePrefixAmount" Value="1"></tag>
+		<tag Name="HeroNameInfixes" Value="al,den,hul,sed, hadad,me,ro,ru,ra,eshe,ere,di,ibi,la,ora,ava,ula,ozo,sheo,ruu,elo,shi,yu,ze,orte,ai,la,si,aya,ayi"></tag>
+		<tag Name="HeroNameInfxAmount" Value="1-2"></tag>
+		<tag Name="HeroNamePostfixes" Value="dal,ner,cal,dor,retz,rah,tep,raq,roq,mir,bas,d,scar,nuel,wer,qat,kat,ur,cheb,q,un,uun,amal,rem,yover,m,kas,viv,h,u,l,va,sh,da,yon"></tag>
+		<tag Name="HeroNamePostFixAmount" Value="0-2"></tag>
+		<tag Name="HeroNameHyphenationChance" Value="0-2"></tag>
+		<tag Name="HeroHPBoost" Value="2"></tag>
+		<part Name="Description" Short="A shifting and undulating being brought forth from an alternate reality."></part>
+		<stat Name="AV" Value="2" />
+		<part Name="HologramMaterial"></part>
+		<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"></tag>
+		<skill Name="Discipline_FastingWay"></skill>
+		<skill Name="Discipline_MindOverBody"></skill>
+		<mutation Name="DarkVision" Level="9" />
+		<mutation Name="Regeneration" Level="4" />
+		<inventoryobject Blueprint="EldrichSummons_Beak" Number="1"></inventoryobject>
+		<inventoryobject Blueprint="EldrichSummons_Spines" Number="1"></inventoryobject>
+	</object>
+
+</objects>

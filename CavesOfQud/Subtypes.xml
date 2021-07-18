@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<subtypes>
+  <class ID="Callings" ChargenTitle="Choose Calling" SingularTitle="calling">
+    <subtype Name="Warlock" Code="g" Gear="StartingGear_PhysAd" Tile="creatures/caste_19.bmp" DetailColor="W">
+      <skills>
+	    <skill Name="Persuasion" />
+		<skill Name="Pistol_MenacingStare" />
+		<skill Name="Persuasion_Proselytize" />
+        <skill Name="Persuasion_Intimidate" />
+        <skill Name="Discipline" />
+        <skill Name="Discipline_Meditate" />
+        <skill Name="Survival" />
+        <skill Name="Customs_Tactful" />
+      </skills>
+      <extrainfo>Starts with entropic gear</extrainfo>
+    </subtype>
+  </class>
+</subtypes>

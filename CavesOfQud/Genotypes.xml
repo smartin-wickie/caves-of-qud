@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<genotypes>
+
+	<genotype Name="Shadow Touched Mutant" MutationPoints="32" StatPoints="44" AllowedMutationCategories="*" RandomWeight="90" DisplayName="Shadow Touched Mutant" Subtypes="Callings" Class="" Code="b" Tile="creatures/sw_nomad.bmp" BodyObject="Humanoid" BaseHPGain="3-3" BaseSPGain="70" BaseMPGain="1" IsMutant="true">
+		<stat Name="Strength" Minimum="10" Maximum="24" />
+		<stat Name="Agility" Minimum="10" Maximum="24" />
+		<stat Name="Toughness" Minimum="10" Maximum="24" />
+		<stat Name="Intelligence" Minimum="10" Maximum="24" />
+		<stat Name="Willpower" Minimum="10" Maximum="24" />
+		<stat Name="Ego" Minimum="10" Maximum="24" />
+		<skills>
+			<skill Name="Tactics_Run" />
+			<skill Name="Survival_Camp" />
+		</skills>
+		<chargeninfo>
+			&amp;c&#249;&amp;y Mutations
+			&amp;c&#249;&amp;y Moderate starting attributes
+		</chargeninfo>
+		
+	</genotype>
+</genotypes>
+
+
